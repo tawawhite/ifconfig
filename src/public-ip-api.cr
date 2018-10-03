@@ -10,12 +10,16 @@ error 404 do
   ""
 end
 
-get "/" do |env|
+def get_ip(env)
   if env.request.headers.has_key?("x-forwarded-for")
     begin
       env.response.content_type = "text/plain"
       env.response.headers.add("Access-Control-Allow-Origin", "*")
-      (IPAddress.new env.request.headers["x-forwarded-for"].split(',')[0]).address
+      if env.request.path == "/"
+        (IPAddress.new env.request.headers["x-forwarded-for"].split(',')[0]).address
+      elsif env.request.path == "/json"
+        {"ip" => (IPAddress.new env.request.headers["x-forwarded-for"].split(',')[0]).address}.to_json
+      end
     rescue ArgumentError
       env.response.status_code = 404
       env.response.print "Invalid IP address"
@@ -26,21 +30,13 @@ get "/" do |env|
   end
 end
 
+get "/" do |env|
+  get_ip(env)
+end
+
 get "/json" do |env|
-    if env.request.headers.has_key?("x-forwarded-for")
-      begin
-        env.response.content_type = "application/json"
-        env.response.headers.add("Access-Control-Allow-Origin", "*")
-        {"ip" => (IPAddress.new env.request.headers["x-forwarded-for"].split(',')[0]).address}.to_json
-      rescue ArgumentError
-        env.response.status_code = 404
-        env.response.print "Invalid IP address"
-      end
-    else
-      env.response.status_code = 404
-      env.response.print "No IP address found"
-    end
-  end
+  get_ip(env)
+end
 
 Kemal.run do |config|
   port = ENV["PORT"] ||= "5000"
