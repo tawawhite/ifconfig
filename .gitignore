@@ -7,7 +7,7 @@
 /bin/
 /.shards/
 *.dwarf
-ip
+public-ip-api
 
 # Libraries don't need dependency lock
 # Dependencies will be locked in application that uses them

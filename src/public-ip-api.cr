@@ -11,6 +11,7 @@ server = HTTP::Server.new([
         begin
             ip = IPAddress.new context.request.headers["x-forwarded-for"].split(',')[0]
             output = {"ip" => ip.address}
+            context.response.headers.add("Access-Control-Allow-Origin", "*")
             context.response.content_type = "application/json"
             context.response.print output.to_json
         rescue ArgumentError
