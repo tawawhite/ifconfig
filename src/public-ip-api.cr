@@ -23,5 +23,6 @@ server = HTTP::Server.new([
     end
 end
 
-puts "Listening on port 5000"
-server.listen("0.0.0.0", 5000, reuse_port: true)
+port = ENV["PORT"] ||= "5000"
+puts "Listening on port #{port}"
+server.listen("0.0.0.0", port.to_i, reuse_port: true)
