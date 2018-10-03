@@ -13,5 +13,5 @@ server = HTTP::Server.new do |context|
     end
 end
 
-server.listen("0.0.0.0", 5000)
 puts "Listening on port 5000"
+server.listen("0.0.0.0", 5000)
