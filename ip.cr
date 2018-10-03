@@ -2,7 +2,6 @@
 require "http/server"
 require "json"
 require "ipaddress"
-require "logger"
 
 server = HTTP::Server.new([
   HTTP::ErrorHandler.new,
