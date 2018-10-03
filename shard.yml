@@ -1,0 +1,14 @@
+name: public-ip-api
+version: 0.1.0
+
+authors:
+  - Jake Meyer <jakewmeyer@gmail.com>
+
+description: |
+  Consise API for returning your public IP address
+
+dependencies:
+  ipaddress:
+    github: sija/ipaddress.cr
+
+license: Apache-2.0
