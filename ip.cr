@@ -2,8 +2,12 @@
 require "http/server"
 require "json"
 require "ipaddress"
+require "logger"
 
-server = HTTP::Server.new do |context|
+server = HTTP::Server.new([
+  HTTP::ErrorHandler.new,
+  HTTP::CompressHandler.new,
+]) do |context|
     if context.request.headers.has_key?("x-forwarded-for")
         begin
             ip = IPAddress.new context.request.headers["x-forwarded-for"].split(',')[0]
