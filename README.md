@@ -3,13 +3,13 @@ Public API for returning your current public IP address
 
 ## Usage
 ```HTTP
-GET ip-api.now.sh
+GET https://ip-api.now.sh
 
 123.123.123.123
 ```
 
 ```HTTP
-GET ip-api.now.sh/json
+GET https://ip-api.now.sh/json
 
 {"ip": "123.123.123.123"}
 ```
