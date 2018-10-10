@@ -13,4 +13,8 @@ dependencies:
   kemal:
     github: kemalcr/kemal
 
+targets:
+  public-ip-api:
+    main: src/public-ip-api.cr
+
 license: Apache-2.0
