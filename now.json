@@ -1,3 +1,4 @@
 {
-  "name": "public-ip-api"
+  "name": "public-ip-api",
+  "alias": ["ip-api"]
 }
