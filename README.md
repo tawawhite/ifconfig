@@ -1,5 +1,5 @@
 ## Public IP API
-API for returning your current public IP address
+Public API for returning your current public IP address
 
 ## Usage
 ```HTTP
@@ -16,3 +16,4 @@ GET https://public-ip-api-qlipdpsgjr.now.sh/json
 
 ## Details
 Implemented using [Crystal](https://crystal-lang.org/)
+Deployed using [Now](https://zeit.co/now) by [ZEIT](https://zeit.co/)
