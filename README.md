@@ -3,13 +3,13 @@ Public API for returning your current public IP address
 
 ## Usage
 ```HTTP
-GET https://public-ip-api-qlipdpsgjr.now.sh/
+GET ip-api.now.sh
 
 123.123.123.123
 ```
 
 ```HTTP
-GET https://public-ip-api-qlipdpsgjr.now.sh/json
+GET ip-api.now.sh/json
 
 {"ip": "123.123.123.123"}
 ```
