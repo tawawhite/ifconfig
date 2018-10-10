@@ -1,4 +1,4 @@
-# Public IP API
+## Public IP API
 API for returning your current public IP address
 
 ## Usage
@@ -13,3 +13,6 @@ GET https://public-ip-api-qlipdpsgjr.now.sh/json
 
 {"ip": "123.123.123.123"}
 ```
+
+## Details
+Implemented using [Crystal](https://crystal-lang.org/)
