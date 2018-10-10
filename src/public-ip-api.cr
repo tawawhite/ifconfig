@@ -13,11 +13,12 @@ end
 def get_ip(env)
   if env.request.headers.has_key?("x-forwarded-for")
     begin
-      env.response.content_type = "text/plain"
       env.response.headers.add("Access-Control-Allow-Origin", "*")
       if env.request.path == "/"
+        env.response.content_type = "text/plain"
         (IPAddress.new env.request.headers["x-forwarded-for"].split(',')[0]).address
       elsif env.request.path == "/json"
+        env.response.content_type = "application/json"
         {"ip" => (IPAddress.new env.request.headers["x-forwarded-for"].split(',')[0]).address}.to_json
       end
     rescue ArgumentError
