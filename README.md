@@ -16,4 +16,5 @@ GET https://ip-api.now.sh/json
 
 ## Details
 Implemented using [Crystal](https://crystal-lang.org/)
+
 Deployed using [Now](https://zeit.co/now) by [ZEIT](https://zeit.co/)
