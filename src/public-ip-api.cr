@@ -4,7 +4,6 @@ require "kemal"
 
 Kemal.config.env = "production"
 serve_static false
-logging false
 
 error 404 do
   ""
