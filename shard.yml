@@ -1,4 +1,4 @@
-name: public-ip-api
+name: ifconfig
 version: 1.0.0
 
 authors:
@@ -15,6 +15,6 @@ dependencies:
 
 targets:
   public-ip-api:
-    main: src/public-ip-api.cr
+    main: src/ifconfig.cr
 
 license: Apache-2.0
