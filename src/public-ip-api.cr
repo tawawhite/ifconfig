@@ -16,11 +16,9 @@ def get_ip(env)
       if env.request.path == "/"
         env.response.content_type = "text/plain"
         (IPAddress.new env.request.headers["x-forwarded-for"].split(',')[0]).address
-        puts env.request.headers["x-forwarded-for"]
       elsif env.request.path == "/json"
         env.response.content_type = "application/json"
         {"ip" => (IPAddress.new env.request.headers["x-forwarded-for"].split(',')[0]).address}.to_json
-        puts env.request.headers["x-forwarded-for"]
       end
     rescue ArgumentError
       env.response.status_code = 404
