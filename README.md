@@ -1,15 +1,15 @@
-## Public IP API
+## ifconfig
 Public API for returning your current public IP address
 
 ## Usage
 ```HTTP
-GET https://ip-api.now.sh
+GET https://ifconfig.now.sh
 
 123.123.123.123
 ```
 
 ```HTTP
-GET https://ip-api.now.sh/json
+GET https://ifconfig.now.sh/json
 
 {"ip": "123.123.123.123"}
 ```
