@@ -1,4 +1,4 @@
 {
   "name": "public-ip-api",
-  "alias": ["ip-api"]
+  "alias": ["ifconfig"]
 }
